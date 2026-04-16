@@ -136,3 +136,61 @@
 .not-found a:hover {
   background: #0056b3;
 }
+.country-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 16px;
+}
+
+.back-btn {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  background: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.country-page__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.country-page__flag {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.country-page__name {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.country-page__official {
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.country-page__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.border-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  margin: 4px;
+  border-radius: 4px;
+}
+
+.page-status {
+  padding: 16px;
+  color: #666;
+}
+
+.page-status--error {
+  color: red;
+}
