@@ -8,6 +8,7 @@ function useCountry(code) {
   useEffect(() => {
     if (!code) return
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true)
     setError(null)
 
