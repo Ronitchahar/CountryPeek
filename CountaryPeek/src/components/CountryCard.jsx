@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
-import { useFavourites } from '../hooks/useFavourites'
+import { useFavourites } from '../context/FavouritesContext'
 
 function CountryCard({ country }) {
   const { name, flags, population, region, capital, cca3 } = country
 
   const { favourites, dispatch } = useFavourites()
-
   const isSaved = favourites.some((f) => f.cca3 === cca3)
 
   function handleClick(e) {
@@ -20,7 +19,11 @@ function CountryCard({ country }) {
 
   return (
     <Link to={`/country/${cca3}`} className="card">
-      <img src={flags.svg} alt={name.common} className="card__flag" />
+      <img
+        src={flags.svg}
+        alt={`Flag of ${name.common}`}
+        className="card__flag"
+      />
 
       <div className="card__body">
         <h3 className="card__name">{name.common}</h3>
@@ -31,6 +34,12 @@ function CountryCard({ country }) {
         <button
           className={`fav-btn ${isSaved ? 'fav-btn--saved' : ''}`}
           onClick={handleClick}
+          aria-label={
+            isSaved
+              ? `Remove ${name.common} from favourites`
+              : `Save ${name.common} to favourites`
+          }
+          aria-pressed={isSaved}
         >
           {isSaved ? '♥ Saved' : '♡ Save'}
         </button>
