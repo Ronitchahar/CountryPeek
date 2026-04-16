@@ -415,3 +415,16 @@ a {
 .home__status--error {
   color: red;
 }
+.fav-btn {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px;
+  color: #666;
+}
+
+.fav-btn--saved {
+  color: red;
+}
