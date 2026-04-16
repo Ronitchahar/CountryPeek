@@ -10,31 +10,28 @@ function Home() {
 
   useEffect(() => {
     if (!query) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCountries([])
       setError(null)
       return
     }
 
-    const timer = setTimeout(() => {
-      setLoading(true)
+    setLoading(true)
 
-      fetch(`https://restcountries.com/v3.1/name/${query}`)
-        .then((res) => {
-          if (!res.ok) throw new Error('Not found')
-          return res.json()
-        })
-        .then((data) => {
-          setCountries(data)
-          setError(null)
-        })
-        .catch(() => {
-          setCountries([])
-          setError('No countries found.')
-        })
-        .finally(() => setLoading(false))
-    }, 400)
-
-    return () => clearTimeout(timer)
+    fetch(`https://restcountries.com/v3.1/name/${query}`)
+      .then((res) => {
+        if (!res.ok) throw new Error('Not found')
+        return res.json()
+      })
+      .then((data) => {
+        setCountries(data)
+        setError(null)
+      })
+      .catch(() => {
+        setCountries([])
+        setError('No countries found.')
+      })
+      .finally(() => setLoading(false))
   }, [query])
 
   return (

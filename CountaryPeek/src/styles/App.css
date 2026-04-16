@@ -54,3 +54,85 @@
 .home__status--error {
   color: red;
 }
+
+.home {
+  min-height: calc(100vh - 80px); /* assuming header height */
+}
+
+.header {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #111;
+}
+
+.header__nav {
+  display: flex;
+  gap: 16px;
+}
+
+.header__nav a {
+  color: #555;
+  font-weight: 500;
+}
+
+.header__nav a:hover {
+  color: #111;
+}
+
+.search-bar {
+  padding: 16px;
+}
+
+.search-bar__input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.search-bar__input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.not-found {
+  text-align: center;
+  padding: 64px 16px;
+}
+
+.not-found h2 {
+  font-size: 48px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.not-found p {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 32px;
+}
+
+.not-found a {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.not-found a:hover {
+  background: #0056b3;
+}
