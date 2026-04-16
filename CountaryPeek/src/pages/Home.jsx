@@ -13,8 +13,7 @@ function Home() {
   const [sortBy, setSortBy] = useState('')
 
   useEffect(() => {
-    if (!query) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (!query.trim()) {
       setCountries([])
       setError(null)
       return
